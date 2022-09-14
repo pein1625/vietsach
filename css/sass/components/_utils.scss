@@ -1,0 +1,94 @@
+.breadcrumb {
+  &-item {
+    &,
+    & + &::before,
+    &.active,
+    &.active::before,
+    a,
+    a:hover {
+      color: $gray-800;
+    }
+  }
+
+  &--white .breadcrumb-item,
+  &--white .breadcrumb-item + .breadcrumb-item::before,
+  &--white .breadcrumb-item + .breadcrumb-item.active,
+  &--white .breadcrumb-item + .breadcrumb-item.active::before,
+  &--white .breadcrumb-item a,
+  &--white .breadcrumb-item a:hover {
+    color: $white;
+  }
+}
+
+.pagination {
+  margin-bottom: 0;
+
+  .page-item {
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+
+  .page-link {
+    color: $gray-800;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 767px) {
+    .page-link {
+      padding: 4px 10px;
+    }
+  }
+}
+
+.search {
+  padding: 16px 20px;
+  border-top: 1px solid #aaa;
+  background-color: $light;
+  margin-bottom: 0 !important;
+
+  .form-control {
+    border-right: 0;
+
+    &:focus {
+      box-shadow: unset;
+    }
+  }
+
+  .form-control:focus ~ .input-group-text {
+    border-color: $input-focus-border-color;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 350px;
+    background: 0;
+    border: 0;
+    padding: 5px 0;
+    position: absolute;
+    top: -35px;
+    left: 0;
+    margin: 0 !important;
+
+    .form-control {
+      font-size: 12px;
+      border: 0;
+      border-radius: 12px 0 0 12px;
+      padding: 0 16px;
+      height: 24px;
+    }
+
+    .input-group-text {
+      font-size: 12px;
+      padding: 0 12px;
+      border: 0;
+      border-radius: 0 12px 12px 0;
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+    width: 430px;
+    padding: 8px 0;
+    top: -40px;
+  }
+}

@@ -1,0 +1,144 @@
+.footer {
+  background-color: #F7F8FB;
+  border-top: 3px solid $primary;
+  padding: 24px 0 30px;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 5fr 2fr 3fr 4fr;
+    grid-gap: 30px 60px;
+  }
+
+  &__heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 30px;
+      border-bottom: 2px solid $primary;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__logo {
+    display: inline-flex;
+    margin-bottom: 20px;
+
+    img {
+      height: 60px;
+    }
+  }
+
+  &__name {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  &__desc {
+    font-size: 14px;
+    text-align: center;
+    margin: 0 auto 16px;
+    max-width: 300px;
+  }
+
+  &__img {
+    height: 100px;
+  }
+
+  &__btn {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 4px 24px;
+    color: $white;
+    background-color: $primary;
+    border-radius: 4px;
+
+    &:hover {
+      color: $white;
+      background-color: darken($primary, 10%);
+    }
+  }
+
+  &__copyright {
+    font-size: 14px;
+    margin-top: 16px;
+  }
+
+  @include media-breakpoint-down(xxl) {
+    &__grid {
+      grid-gap: 30px;
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    &__grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &__col {
+      &:first-child {
+        grid-column: span 3;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__col {
+      &:first-child {
+        grid-column: span 1;
+      }
+    }
+
+    &__copyright {
+      margin-top: 30px;
+    }
+  }
+}
+
+.f-menu {
+  margin: 0;
+  padding-left: 17px;
+  font-size: 14px;
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.f-contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+}

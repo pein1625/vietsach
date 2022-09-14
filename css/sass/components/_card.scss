@@ -1,0 +1,333 @@
+.news {
+  &__frame {
+    @include frame('rect', 50%);
+    @include frame('zoom');
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: 0;
+
+    &:not(:first-child) {
+      margin-top: 16px;
+    }
+  }
+
+  &__desc {
+    @include max-line(3);
+    color: #333;
+    margin-top: 1em;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: $primary;
+    margin-top: 20px;
+  }
+
+  &__btn {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    border: 1px solid #777;
+    border-radius: 4px;
+    color: $primary;
+    transition: 0.4s;
+    padding: 4px 20px;
+
+    &:hover {
+      color: $white;
+      background-color: $primary;
+      border-color: $primary;
+      text-decoration: none;
+    }
+  }
+
+  @include media-breakpoint-down(xxl) {
+    &__frame {
+      &::before {
+        padding-bottom: 56.25%;
+      }
+    }
+
+    &__title {
+      font-size: 18px;
+    }
+
+    &__info {
+      margin-top: 1em;
+    }
+  }
+}
+
+.news-2 {
+  &__frame {
+    @include frame('rect', 56.25%);
+    @include frame('zoom');
+  }
+
+  &__title {
+    font-size: 1em;
+    font-weight: 700;
+    color: $white;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 1em 0 0;
+
+    a:hover {
+      color: $white;
+    }
+  }
+}
+
+.news-4 {
+  &__frame {
+    @include frame('rect', 56.25%);
+    @include frame('zoom');
+  }
+
+  &__title {
+    @include max-line(3);
+    font-size: 14px;
+    font-weight: 700;
+    margin: 1em 0;
+
+    a:hover {
+      color: $primary;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 24px;
+    padding: 0 10px;
+    border-radius: 2px;
+    background-color: #D2D2D2;
+
+    &:hover {
+      background-color: #aaa;
+    }
+  }
+}
+
+.news-5 {
+  &__frame {
+    @include frame('rect', 56.25%);
+    @include frame('zoom');
+    border-radius: 4px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    margin: 20px 0 8px;
+  }
+
+  &__info {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 16px;
+  }
+
+  &__desc {
+    @include max-line(4);
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    color: $primary;
+    color: $primary;
+  }
+}
+
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding-left: 54px;
+    position: relative;
+
+    &::before {
+      content: '1';
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2em;
+      height: 2.4em;
+      background: url('../images/number-caret.png') center/contain no-repeat;
+      color: $white;
+      font-size: 1.2em;
+      font-weight: 700;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1em;
+      padding-bottom: 1em;
+      border-bottom: 1px solid $border-color-gray;
+    }
+
+    &:nth-child(2)::before {
+      content: '2';
+    }
+
+    &:nth-child(3)::before {
+      content: '3';
+    }
+
+    &:nth-child(4)::before {
+      content: '4';
+    }
+
+    &:nth-child(5)::before {
+      content: '5';
+    }
+
+    &:nth-child(6)::before {
+      content: '6';
+    }
+
+    &:nth-child(7)::before {
+      content: '7';
+    }
+
+    &:nth-child(8)::before {
+      content: '8';
+    }
+
+    &:nth-child(9)::before {
+      content: '9';
+    }
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 3em;
+    color: #333333;
+
+    &:hover {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+}
+
+.service {
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #F8F8FA;
+  box-shadow: 0 1px 10px rgba(#000, 0.16);
+  transition: 0.6s;
+
+  &:hover {
+    box-shadow: 0 3px 15px rgba(#000, 0.3);
+    transform: translateY(-5px);
+  }
+
+  &__frame {
+    @include frame('rect', 56.25%);
+    border-radius: 20px;
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $primary;
+    margin: 30px 0 16px;
+  }
+
+  &__desc {
+    font-size: 14px;
+    color: $primary;
+    margin-bottom: 24px;
+
+    ul {
+      padding-left: 17px;
+    }
+  }
+
+  &__btn {
+    @include btn('shine');
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: $white;
+    background: linear-gradient(to right, #00165A, #3F9AD4);
+    padding: 10px 30px;
+    border-radius: 20px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    padding: 20px;
+    border-radius: 10px;
+
+    &__frame {
+      border-radius: 10px;
+    }
+
+    &__name {
+      font-size: 16px;
+      margin: 20px 0 10px;
+    }
+
+    &__desc {
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    &__btn {
+      font-size: 12px;
+      padding: 6px 24px;
+    }
+  }
+}
+
+.personal {
+  &__frame {
+    @include frame('rect', 127%);
+    @include frame('zoom');
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 20px 0 0;
+  }
+
+  &__desc {
+    @include max-line(3);
+    font-size: 14px;
+    margin-top: 1em;
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__title {
+      font-size: 14px;
+      margin-top: 12px;
+    }
+
+    &__desc {
+      font-size: 12px;
+      margin-top: 8px;
+    }
+  }
+}
